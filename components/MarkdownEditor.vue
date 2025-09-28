@@ -14,6 +14,8 @@ const textareaRef = ref<HTMLTextAreaElement | null>(null)
 const overlayRef = ref<HTMLElement | null>(null)
 let cleanup: (() => void) | null = null
 
+const placeholderExample = '{{placeholder}}'
+
 const escapeHtml = (value: string) =>
   value
     .replace(/&/g, '&amp;')
@@ -82,7 +84,7 @@ const handleInput = (event: Event) => {
     <header class="flex items-center justify-between">
       <div>
         <h2 class="text-lg font-semibold text-slate-100">Markdown Template</h2>
-        <p class="text-sm text-slate-400">Insert placeholders like <code>{{`{{placeholder}}`}}</code>.</p>
+        <p class="text-sm text-slate-400">Insert placeholders like <code>{{ placeholderExample }}</code>.</p>
       </div>
     </header>
     <div class="relative flex-1">

@@ -11,7 +11,7 @@ const props = defineProps<{
 const html = ref('')
 
 const render = async () => {
-  const raw = marked.parse(props.content || '', { breaks: true })
+  const raw = await marked.parse(props.content || '', { breaks: true })
   if (process.client) {
     if (!dompurify) {
       dompurify = await import('dompurify')

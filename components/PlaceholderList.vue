@@ -7,6 +7,8 @@ const emit = defineEmits<{
   (e: 'update', payload: { name: string; value: string }): void
 }>()
 
+const placeholderExample = '{{name}}'
+
 const handleInput = (name: string, value: string) => {
   emit('update', { name, value })
 }
@@ -20,7 +22,7 @@ const handleInput = (name: string, value: string) => {
     </header>
     <div class="flex-1 space-y-3 overflow-y-auto rounded-lg border border-slate-800 bg-slate-900/60 p-4">
       <p v-if="!Object.keys(placeholders).length" class="text-sm text-slate-400">
-        No placeholders detected. Add placeholders like <code>{{`{{name}}`}}</code> to the template.
+        No placeholders detected. Add placeholders like <code>{{ placeholderExample }}</code> to the template.
       </p>
       <div
         v-for="([name, value], index) in Object.entries(placeholders)"

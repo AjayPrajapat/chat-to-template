@@ -5,3 +5,8 @@ node_modules
 .env
 *.log
 .lock-wscript
+.output
+
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md

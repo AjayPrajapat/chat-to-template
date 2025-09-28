@@ -53,8 +53,7 @@ export default defineEventHandler(async (event) => {
           role: 'user',
           content: prompt
         }
-      ],
-      response_format: { type: 'json_object' }
+      ]
     })
 
     const textOutput = response.output_text ||
